@@ -46,6 +46,8 @@ Provide the cryptographic material:
 
 ─────────────────────────────────────────────────────
 🔁 Usage
+# Create the necessary metadata to build extrinsics
+subxt metadata -f bytes > artifacts/solo_metadata.scale
 
 # Compile and run sr25519 signer (Alice → Bob)
 cargo build --bin ec_signer --release
