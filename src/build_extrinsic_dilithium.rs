@@ -36,5 +36,5 @@ fn main() {
     let extrinsic = [&[0x00u8][..], &call_data[..]].concat();
 
     // Mostrar resultado final
-    println!("Extrinsic: ", hex::encode(extrinsic));
+    println!("Extrinsic: {:?}", hex::encode(extrinsic));
 }
