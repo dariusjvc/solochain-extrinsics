@@ -49,14 +49,6 @@ Provide the cryptographic material:
 # Create the necessary metadata to build extrinsics
 subxt metadata -f bytes > artifacts/solo_metadata.scale
 
-# Compile and run sr25519 signer (Alice → Bob)
-cargo build --bin ec_signer --release
-cargo run --bin ec_signer --release
-
-# Compile and run Dilithium extrinsic builder (unsigned)
-cargo build --bin build_extrinsic_dilithium --release
-cargo run --bin build_extrinsic_dilithium --release
-
 # Compile and run EC and Dilithium extrinsic builder
 cargo build --bin ec_dilithium_extrinsic --release
 cargo run --bin ec_dilithium_extrinsic --release
