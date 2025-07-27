@@ -9,6 +9,8 @@ subxt-signer = "0.42.1"
 tokio = { version = "1", features = ["full"] }
 hex = "0.4"
 
+jsonrpsee = { version = "0.22", features = ["http-client"] }
+serde_json = "1.0"
 
 pqcrypto-dilithium = "0.5"
 pqcrypto-traits = "0.3"
@@ -25,3 +27,12 @@ path = "src/ec_signer.rs"
 [[bin]]
 name = "build_extrinsic_dilithium"
 path = "src/build_extrinsic_dilithium.rs"
+
+[[bin]]
+name = "ec_dilithium_extrinsic"
+path = "src/ec_dilithium_extrinsic.rs"
+
+
+[[bin]]
+name = "generate_dilithium_keypair"
+path = "src/generate_dilithium_keypair.rs"
