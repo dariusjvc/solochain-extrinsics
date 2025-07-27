@@ -3,6 +3,7 @@
 use subxt::{OnlineClient, SubstrateConfig};
 use subxt_signer::sr25519::{Keypair, SecretKeyBytes};
 use std::fs;
+use subxt::utils::AccountId32;
 
 #[subxt::subxt(runtime_metadata_path = "artifacts/solo_metadata.scale")]
 pub mod solo {}
@@ -20,10 +21,15 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let api = OnlineClient::<SubstrateConfig>::new().await?;
 
     // Bod Address
-    let dest = subxt_signer::sr25519::dev::bob().public_key().into();
+    //let dest = subxt_signer::sr25519::dev::bob().public_key().into();
+
+    let dest: AccountId32 = subxt_signer::sr25519::dev::bob().public_key().into();
+
 
     // Crear extrínseco de transferencia
-    let tx = solo::tx().balances().transfer_allow_death(dest, 2_000_000);
+    //let tx = solo::tx().balances().transfer_allow_death(dest, 2_000_000);
+    let tx = solo::tx().template().do_something(42);
+
 
     // Send the tx and confirm
     let events = api
