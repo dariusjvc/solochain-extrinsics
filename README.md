@@ -57,6 +57,14 @@ cargo run --bin ec_signer --release
 cargo build --bin build_extrinsic_dilithium --release
 cargo run --bin build_extrinsic_dilithium --release
 
+# Compile and run EC and Dilithium extrinsic builder
+cargo build --bin ec_dilithium_extrinsic --release
+cargo run --bin ec_dilithium_extrinsic --release
+
+# Generate Dilithium keypair
+cargo build --bin generate_dilithium_keypair --release
+cargo run --bin generate_dilithium_keypair --release
+
 ─────────────────────────────────────────────────────
 📌 Roadmap
 
