@@ -10,8 +10,8 @@ Supports traditional signatures (sr25519 via `subxt`) and post-quantum signature
 ├── artifacts/
 │   └── solo_metadata.scale        # Metadata exported with subxt
 ├── src/
-│   ├── ec_signer.rs               # Sends a signed transfer using sr25519 (Alice's seed)
-│   └── build_extrinsic_dilithium.rs  # Builds unsigned extrinsic with Dilithium signature
+│   ├── ec_dilithium_extrinsic.rs               # Sends a signed transfer using sr25519 (Alice's seed)
+│   └── generate_dilithium_keypair.rs  # Builds unsigned extrinsic with Dilithium signature
 ├── alice_seed.txt                 # Hex-encoded Alice seed
 ├── dilithium_priv.key             # Dilithium private key
 ├── dilithium_pub.key              # Dilithium public key
@@ -56,13 +56,5 @@ cargo run --bin ec_dilithium_extrinsic --release
 # Generate Dilithium keypair
 cargo build --bin generate_dilithium_keypair --release
 cargo run --bin generate_dilithium_keypair --release
-
-─────────────────────────────────────────────────────
-📌 Roadmap
-
-[x] Send extrinsics signed with sr25519 (Alice)
-[ ] Build and send Dilithium-signed extrinsics
-[ ] Implement runtime pallet to verify Dilithium signatures
-[ ] Support hybrid extrinsics (EC + PQ signature schemes)
 
 ```
